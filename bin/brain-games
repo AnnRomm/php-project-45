@@ -1,4 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use function  Php\Project\Cli\greetUser;
+
+greetUser();
+
 echo 'Welcome to the Brain Games!\n';
