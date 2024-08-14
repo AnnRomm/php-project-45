@@ -3,7 +3,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function  Php\Project\Cli\greetUser;
+use function Php\Project\Cli\greetUser;
 
 greetUser();
 
