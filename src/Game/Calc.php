@@ -2,8 +2,6 @@
 
 namespace BrainGames\src\Game\Calc;
 
-use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\goPlay;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
