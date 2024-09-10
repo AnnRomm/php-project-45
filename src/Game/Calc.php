@@ -46,10 +46,3 @@ function startGameCalculator()
 
     goPlay($questionsAndAnswers, CONDITION);
 }
-
-
-
-
-
-
-
