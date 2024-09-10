@@ -18,15 +18,15 @@ function calculateGcd($number1, $number2)
     return $number1;
 }
 
-function playGcd()
+function playGameGcd()
 {
     $questionsAndAnswers = [];
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $number1 = rand(1, 20);
-        $number2 = rand(1, 20);
+        $randomNumber1 = rand(1, 20);
+        $randomNumber2 = rand(1, 20);
 
-        $question = "$number1  $number2";
-        $rightAnswer = calculateGcd($number1, $number2);
+        $question = "$randomNumber1  $randomNumber2";
+        $rightAnswer = calculateGcd($randomNumber1, $randomNumber2);
         $questionsAndAnswers[$question] = $rightAnswer;
     }
 

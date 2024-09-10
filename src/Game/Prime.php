@@ -23,7 +23,7 @@ function isPrime($number)
     }
 }
 
-function gamePrimeStart()
+function startGamePrime()
 {
     $questionsAndAnswers = [];
 

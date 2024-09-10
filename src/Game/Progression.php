@@ -17,7 +17,7 @@ function generateProgression($start, $step, $length)
     return $progression;
 }
 
-function gameProgressionStart()
+function startGameProgression()
 {
     $questionsAndAnswers = [];
 
