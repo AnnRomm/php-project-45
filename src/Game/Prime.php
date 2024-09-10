@@ -35,3 +35,4 @@ function startGamePrime()
 
     goPlay($questionsAndAnswers, CONDITION);
 }
+
