@@ -25,7 +25,7 @@ function playGameGcd()
         $randomNumber1 = rand(1, 20);
         $randomNumber2 = rand(1, 20);
 
-        $question = "$randomNumber1  $randomNumber2";
+        $question = "$randomNumber1 $randomNumber2";
         $rightAnswer = calculateGcd($randomNumber1, $randomNumber2);
         $questionsAndAnswers[$question] = $rightAnswer;
     }
