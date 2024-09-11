@@ -8,17 +8,19 @@ use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'What is the result of the expression?';
 
-function calculate($number1, $number2, $operators)
+function calculate(int $randomNumber1, int $randomNumber2, string $operators)
 {
+    $result = null;
+
     switch ($operators) {
         case '+':
-            $result = $number1 + $number2;
+            $result = $randomNumber1 + $randomNumber2;
             break;
         case '-':
-            $result = $number1 - $number2;
+            $result = $randomNumber1 - $randomNumber2;
             break;
         case '*':
-            $result = $number1 * $number2;
+            $result = $randomNumber1 * $randomNumber2;
             break;
         default:
             echo "Error: Unknown operator '$operators'.";

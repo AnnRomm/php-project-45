@@ -8,7 +8,7 @@ use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime($number)
+function isPrime(int $number)
 {
     $divisors = 0;
     for ($j = 1; $j <= $number; $j++) {

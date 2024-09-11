@@ -8,7 +8,7 @@ use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'What number is missing in the progression?';
 
-function generateProgression($start, $step, $length)
+function generateProgression(int $start, int $step, int $length)
 {
     $progression = [];
     for ($i = 0; $i < $length; $i++) {
