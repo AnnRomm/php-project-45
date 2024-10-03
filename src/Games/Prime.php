@@ -1,8 +1,9 @@
 <?php
 
-namespace BrainGames\src\Game\Prime;
+namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\goPlay;
+use function BrainGames\Engine\randomNumberInRange;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -16,19 +17,15 @@ function isPrime(int $number)
             $divisors += 1;
         }
     }
-    if ($divisors === 2) {
-        return true;
-    } else {
-        return false;
-    }
+    return $divisors === 2;
 }
 
 function startGamePrime()
 {
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $randomNumber = rand(1, 100);
+    for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
+        $randomNumber = randomNumberInRange(1, 100);
         $rightAnswer = isPrime($randomNumber) ? 'yes' : 'no';
         $questionsAndAnswers[(string)$randomNumber] = $rightAnswer;
     }

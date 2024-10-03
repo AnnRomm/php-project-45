@@ -1,18 +1,17 @@
 <?php
 
-namespace BrainGames\src\Game\Calc;
+namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\goPlay;
+use function BrainGames\Engine\randomNumberInRange;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'What is the result of the expression?';
 
-function calculate(int $randomNumber1, int $randomNumber2, string $operators)
+function calculate(int $randomNumber1, int $randomNumber2, string $operator)
 {
-    $result = null;
-
-    switch ($operators) {
+    switch ($operator) {
         case '+':
             $result = $randomNumber1 + $randomNumber2;
             break;
@@ -23,8 +22,8 @@ function calculate(int $randomNumber1, int $randomNumber2, string $operators)
             $result = $randomNumber1 * $randomNumber2;
             break;
         default:
-            echo "Error: Unknown operator '$operators'.";
-            break;
+            echo "Error: Unknown operator '$operator'.";
+            exit(1);
     }
 
     return $result;
@@ -36,9 +35,9 @@ function startGameCalculator()
     $operators = array('+', '-', '*');
     $questionsAndAnswers = [];
 
-    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $randomNumber1 = rand(1, 20);
-        $randomNumber2 = rand(1, 20);
+    for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
+        $randomNumber1 = randomNumberInRange(1, 20);
+        $randomNumber2 = randomNumberInRange(1, 20);
         $operator = $operators[array_rand($operators)];
 
         $question = "$randomNumber1 $operator $randomNumber2";

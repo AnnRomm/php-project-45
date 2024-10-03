@@ -1,8 +1,9 @@
 <?php
 
-namespace BrainGames\src\Game\Gcd;
+namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\goPlay;
+use function BrainGames\Engine\randomNumberInRange;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -21,14 +22,14 @@ function calculateGcd(int $number1, int $number2)
 function playGameGcd()
 {
     $questionsAndAnswers = [];
-    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $randomNumber1 = rand(1, 20);
-        $randomNumber2 = rand(1, 20);
+    for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
+        $randomNumber1 = randomNumberInRange(1, 20);
+        $randomNumber2 = randomNumberInRange(1, 20);
 
         $question = "$randomNumber1 $randomNumber2";
         $rightAnswer = calculateGcd($randomNumber1, $randomNumber2);
         $questionsAndAnswers[$question] = $rightAnswer;
     }
 
-    goPlay($questionsAndAnswers, \BrainGames\src\Game\Gcd\CONDITION);
+    goPlay($questionsAndAnswers, CONDITION);
 }

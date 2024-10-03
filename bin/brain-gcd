@@ -10,6 +10,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function BrainGames\src\Game\Gcd\playGameGcd;
+use function BrainGames\Games\Gcd\playGameGcd;
 
 playGameGcd();

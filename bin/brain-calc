@@ -11,6 +11,6 @@ if (file_exists($autoloadPath1)) {
 }
 
 
-use function BrainGames\src\Game\Calc\startGameCalculator;
+use function BrainGames\Games\Calc\startGameCalculator;
 
 startGameCalculator();

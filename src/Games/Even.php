@@ -1,8 +1,9 @@
 <?php
 
-namespace BrainGames\src\Game\Even;
+namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\goPlay;
+use function BrainGames\Engine\randomNumberInRange;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -16,8 +17,8 @@ function isEven(int $number)
 function startGameIsEven()
 {
     $questionsAndAnswers = [];
-    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
-        $randomNumber = rand(1, 100);
+    for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
+        $randomNumber = randomNumberInRange(1, 100);
         $rightAnswer = isEven($randomNumber) ? 'yes' : 'no';
         $questionsAndAnswers[$randomNumber] = $rightAnswer;
     }
