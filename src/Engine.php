@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function randomNumberInRange($minNumber, $maxNumber): int
+function randomNumberInRange(int $minNumber, int $maxNumber): int
 {
     return rand($minNumber, $maxNumber);
 }
