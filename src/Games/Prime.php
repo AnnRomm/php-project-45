@@ -3,9 +3,11 @@
 namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\goPlay;
-use function BrainGames\Engine\randomNumberInRange;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
+
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 100;
 
 const CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -25,7 +27,7 @@ function startGamePrime()
     $questionsAndAnswers = [];
 
     for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
-        $randomNumber = randomNumberInRange(1, 100);
+        $randomNumber = rand(MIN_NUMBER, MAX_NUMBER);
         $rightAnswer = isPrime($randomNumber) ? 'yes' : 'no';
         $questionsAndAnswers[(string)$randomNumber] = $rightAnswer;
     }

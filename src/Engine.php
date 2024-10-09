@@ -7,11 +7,6 @@ use function cli\prompt;
 
 const ROUNDS_COUNT = 3;
 
-function randomNumberInRange(int $minNumber, int $maxNumber): int
-{
-    return rand($minNumber, $maxNumber);
-}
-
 function goPlay(array $questionsAndAnswers, string $condition)
 {
     line('Welcome to the Brain Games!');
@@ -22,7 +17,7 @@ function goPlay(array $questionsAndAnswers, string $condition)
     foreach ($questionsAndAnswers as $question => $rightAnswer) {
         line("Question: %s", $question);
         $answer = prompt('Your answer');
-        if ($answer == $rightAnswer) {
+        if ($answer === (string)$rightAnswer) {
             line('Correct!');
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$rightAnswer'.");
