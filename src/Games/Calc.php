@@ -38,13 +38,13 @@ function startGameCalculator()
     $questionsAndAnswers = [];
 
     for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
-        $randomNumber1 = rand(MIN_NUMBER, MAX_NUMBER);  // Заменили на константы
+        $randomNumber1 = rand(MIN_NUMBER, MAX_NUMBER);
         $randomNumber2 = rand(MIN_NUMBER, MAX_NUMBER);
         $operator = $operators[array_rand($operators)];
 
         $question = "$randomNumber1 $operator $randomNumber2";
         $rightAnswer = calculate($randomNumber1, $randomNumber2, $operator);
-        $questionsAndAnswers[$question] = $rightAnswer;
+        $questionsAndAnswers[] = ['question' => $question, 'rightAnswer' => (string)$rightAnswer];
     }
 
     goPlay($questionsAndAnswers, CONDITION);

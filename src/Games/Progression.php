@@ -33,7 +33,7 @@ function startGameProgression()
 
         $question = implode(' ', $progression);
 
-        $questionsAndAnswers[$question] = $rightAnswer;
+        $questionsAndAnswers[] = ['question' => $question, 'rightAnswer' => (string)$rightAnswer];
     }
 
     goPlay($questionsAndAnswers, CONDITION);

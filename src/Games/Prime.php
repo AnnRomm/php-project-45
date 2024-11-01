@@ -29,7 +29,7 @@ function startGamePrime()
     for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
         $randomNumber = rand(MIN_NUMBER, MAX_NUMBER);
         $rightAnswer = isPrime($randomNumber) ? 'yes' : 'no';
-        $questionsAndAnswers[(string)$randomNumber] = $rightAnswer;
+        $questionsAndAnswers[] = [ 'question' => $randomNumber, 'rightAnswer' => $rightAnswer];
     }
 
     goPlay($questionsAndAnswers, CONDITION);

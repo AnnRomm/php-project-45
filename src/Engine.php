@@ -14,13 +14,14 @@ function goPlay(array $questionsAndAnswers, string $condition)
     line("Hello, {$namePlayer}");
     line($condition);
 
-    foreach ($questionsAndAnswers as $question => $rightAnswer) {
-        line("Question: %s", $question);
+    foreach ($questionsAndAnswers as $qa) {
+        line("Question: %s", $qa['question']);
         $answer = prompt('Your answer');
-        if ($answer === (string)$rightAnswer) {
+
+        if ($answer === $qa['rightAnswer']) {
             line('Correct!');
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$rightAnswer'.");
+            line("'$answer' is wrong answer ;(. Correct answer was {$qa['rightAnswer']}.");
             line("Let's try again, {$namePlayer}!");
             return;
         }

@@ -7,7 +7,7 @@ use function BrainGames\Engine\goPlay;
 use const BrainGames\Engine\ROUNDS_COUNT;
 
 const MIN_NUMBER = 1;
-const MAX_NUMBER = 100;
+const MAX_NUMBER = 50;
 
 const CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -22,7 +22,7 @@ function startGameIsEven()
     for ($round = 1; $round <= ROUNDS_COUNT; $round++) {
         $randomNumber = rand(MIN_NUMBER, MAX_NUMBER);
         $rightAnswer = isEven($randomNumber) ? 'yes' : 'no';
-        $questionsAndAnswers[$randomNumber] = $rightAnswer;
+        $questionsAndAnswers[] = [ 'question' => $randomNumber, 'rightAnswer' => $rightAnswer];
     }
 
     goPlay($questionsAndAnswers, CONDITION);

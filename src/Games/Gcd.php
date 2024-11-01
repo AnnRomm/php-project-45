@@ -29,7 +29,7 @@ function playGameGcd()
 
         $question = "$randomNumber1 $randomNumber2";
         $rightAnswer = calculateGcd($randomNumber1, $randomNumber2);
-        $questionsAndAnswers[$question] = $rightAnswer;
+        $questionsAndAnswers[] = [ 'question' => $question, 'rightAnswer' => (string)$rightAnswer];
     }
 
     goPlay($questionsAndAnswers, CONDITION);
